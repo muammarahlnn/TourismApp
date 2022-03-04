@@ -1,6 +1,5 @@
 package com.dicoding.tourismapp.core.data.source.local
 
-import androidx.lifecycle.LiveData
 import com.dicoding.tourismapp.core.data.source.local.entity.TourismEntity
 import com.dicoding.tourismapp.core.data.source.local.room.TourismDao
 import kotlinx.coroutines.flow.Flow
@@ -25,5 +24,14 @@ class LocalDataSource private constructor(private val tourismDao: TourismDao) {
     fun setFavoriteTourism(tourism: TourismEntity, newState: Boolean) {
         tourism.isFavorite = newState
         tourismDao.updateFavoriteTourism(tourism)
+    }
+
+    companion object {
+        private var instance: LocalDataSource? = null
+
+        fun getInstance(tourismDao: TourismDao): LocalDataSource =
+            instance ?: synchronized(this) {
+                instance ?: LocalDataSource(tourismDao)
+            }
     }
 }
