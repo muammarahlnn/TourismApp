@@ -4,7 +4,7 @@ import com.dicoding.tourismapp.core.data.source.local.entity.TourismEntity
 import com.dicoding.tourismapp.core.data.source.local.room.TourismDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource private constructor(private val tourismDao: TourismDao) {
+class LocalDataSource(private val tourismDao: TourismDao) {
 
     fun getAllTourism(): Flow<List<TourismEntity>> = tourismDao.getAllTourism()
 
@@ -15,14 +15,5 @@ class LocalDataSource private constructor(private val tourismDao: TourismDao) {
     fun setFavoriteTourism(tourism: TourismEntity, newState: Boolean) {
         tourism.isFavorite = newState
         tourismDao.updateFavoriteTourism(tourism)
-    }
-
-    companion object {
-        private var instance: LocalDataSource? = null
-
-        fun getInstance(tourismDao: TourismDao): LocalDataSource =
-            instance ?: synchronized(this) {
-                instance ?: LocalDataSource(tourismDao)
-            }
     }
 }
