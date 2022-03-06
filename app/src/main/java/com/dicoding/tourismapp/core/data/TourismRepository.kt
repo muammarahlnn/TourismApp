@@ -52,6 +52,5 @@ class TourismRepository @Inject constructor(
             localDataSource.setFavoriteTourism(tourismEntity, state)
         }
     }
-
 }
 

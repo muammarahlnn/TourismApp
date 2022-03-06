@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 class LocalDataSource @Inject constructor(private val tourismDao: TourismDao) {
-
+  
     fun getAllTourism(): Flow<List<TourismEntity>> = tourismDao.getAllTourism()
 
     fun getFavoriteTourism(): Flow<List<TourismEntity>> = tourismDao.getFavoriteTourism()
@@ -19,5 +19,4 @@ class LocalDataSource @Inject constructor(private val tourismDao: TourismDao) {
         tourism.isFavorite = newState
         tourismDao.updateFavoriteTourism(tourism)
     }
-
 }
