@@ -4,10 +4,11 @@ import com.dicoding.tourismapp.core.data.Resource
 import com.dicoding.tourismapp.core.domain.model.Tourism
 import com.dicoding.tourismapp.core.domain.repository.ITourismRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class TourismInteractor(
+class TourismInteractor @Inject constructor(
     private val tourismRepository: ITourismRepository
-) : TourismUseCase{
+) : TourismUseCase {
 
     override fun getAllTourism(): Flow<Resource<List<Tourism>>> =
         tourismRepository.getAllTourism()
