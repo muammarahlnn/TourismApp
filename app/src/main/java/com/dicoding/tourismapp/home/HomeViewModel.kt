@@ -10,3 +10,4 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(tourismUseCase: TourismUseCase) : ViewModel() {
     val tourism = tourismUseCase.getAllTourism().asLiveData()
 }
+
