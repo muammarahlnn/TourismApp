@@ -47,8 +47,8 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$room_version"
 
     //retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
     api "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
 
     //coroutine

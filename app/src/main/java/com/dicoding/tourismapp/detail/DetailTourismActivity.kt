@@ -26,10 +26,6 @@ class DetailTourismActivity : AppCompatActivity() {
         binding = ActivityDetailTourismBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        hapus kode berikut
-//        val factory = ViewModelFactory.getInstance(this)
-//        detailTourismViewModel = ViewModelProvider(this, factory)[DetailTourismViewModel::class.java]
-
         val detailTourism = intent.getParcelableExtra<Tourism>(EXTRA_DATA)
         showDetailTourism(detailTourism)
     }
