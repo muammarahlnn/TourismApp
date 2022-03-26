@@ -42,4 +42,7 @@ dependencies {
     implementation project(":core")
     implementation project(":app")
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:0.8.0"
 }
